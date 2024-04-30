@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from myapp import views  # Import the views module from the 'myapp' app directory
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),
+    path('<int:id>/', views.show, name='show'),
 ]
